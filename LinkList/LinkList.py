@@ -2,6 +2,21 @@ class List:
     def __init__(self, data=None):
         self.data = data
         self.next = None
+    
+    def sort(self, reverse=False):
+        p = self.next
+        while p:
+            q = p.next
+            while q:
+                if not reverse:
+                    if p.data > q.data:
+                        p.data, q.data = q.data, p.data
+                else:
+                    if p.data < q.data:
+                        p.data, q.data = q.data, p.data
+                q = q.next
+            p = p.next
+
 
 
 def ListCreate():
@@ -39,4 +54,6 @@ def ListPrint(head):
 
 if __name__ == "__main__":
     Head = ListCreate2()
+    ListPrint(Head)
+    Head.sort()
     ListPrint(Head)
