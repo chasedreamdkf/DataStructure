@@ -48,8 +48,9 @@ def ListPrint(head):
     p = head.next
     while p:
         print(p.data, end=" ")
+        print('->', end=' ')
         p = p.next
-    print()
+    print('None')
 
 
 if __name__ == "__main__":
